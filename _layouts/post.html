@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article class="post">
+
+<div class="header-article">  
+<h1>{{ page.title }}</h1>
+  <a href="{{ site.baseurl }}/" class="read-back">Back to home</a>
+</div>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+
+  {% include disqus.html %}
+</article>
