@@ -8,7 +8,7 @@
 @import "reset";
 @import "variables";
 @import "new-footer";
-@import "header";
+
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -361,6 +361,204 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
+
+header {
+  background-color: #2d333b;
+  color: #cdd9e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  height: 44pt;  
+  border-bottom: 1px solid #444c56;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 9999;  
+}
+
+.menu-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;  
+}
+
+.hamburger i {
+  font-size: 1.5rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #cdd9e5;
+}
+
+.logo img {
+  width: 100%;
+  height: 40pt;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.search-icon i {
+  color: #fff;
+}
+
+#search-input {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 40px;
+  padding: 0 8px;
+  border: none;
+  background-color: #2d333b;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 2;
+  border: 1px solid #444c56;
+  border-radius: 5px;  
+}
+
+#search-input.active {
+  display: block;
+}
+
+.navbar {
+  display: none;
+  background-color: #333;
+  padding: 1rem;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.navbar {
+  text-decoration: none;
+}
+
+.active {
+  display: flex;
+  background: #2d333b;
+  color: #fff;
+}
+
+.active a:visited, a:focus, a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* стили для мобильных устройств */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header {
+    height: 44pt;
+  }
+  .logo img {
+    width: 100%;
+    height: 30pt;
+  }
+  .logo h1 {
+    font-size: calc(14px + 2vw);
+  }
+  .menu-btn {
+    margin-right: 10px;
+  }
+}
+
+/* стили для планшетов */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  header {
+    height: 44pt;
+  }
+  .logo img {
+    width: 100%;
+    height: 40pt;
+  }
+  .logo h1 {
+    font-size: calc(14px + 2vw);
+  }
+  .menu-btn {
+    margin-right: 15px;
+  }
+}
+
+/* стили для десктопов */
+@media screen and (min-width: 769px) {
+  body {
+    font-size: 18px;
+  }
+  header {
+    height: 44pt;
+  }
+  .logo img {
+    width: 100%;
+    height: 40pt;
+  }
+  .logo h1 {
+    font-size: calc(14px + 2vw);
+  }
+  .menu-btn {
+    margin-right: 20px;
+  }
+}
+
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
