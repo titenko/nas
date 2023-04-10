@@ -5,8 +5,8 @@
   "background_color": "#22272e",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "{{ site.baseurl }}/",
-  "start_url": "{{ site.baseurl }}/",
+  "scope": "https://titenko.github.io/nas/",
+  "start_url": "https://titenko.github.io/nas/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
