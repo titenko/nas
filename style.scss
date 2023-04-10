@@ -30,12 +30,6 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 480px) {
-  ::-webkit-bottom-overflow {
-    display: none;
-  }
-}
-
 .post a {
   color: #539bf5;
   text-decoration: underline;

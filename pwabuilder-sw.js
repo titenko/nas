@@ -1,6 +1,6 @@
 // This is the "Offline page" service worker
 
-importScripts('{{ site.baseurl }}/assets/js/workbox-sw.js');
+importScripts('/assets/js/workbox-sw.js');
 
 const CACHE = "pwabuilder-page";
 const offlineFallbackPage = "/ToDo-replace-this-name.html";
