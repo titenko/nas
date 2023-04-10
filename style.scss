@@ -23,6 +23,17 @@ body {
   background: #22272e;
   font: 18px/1.4 $helvetica;
   color: #adbac7;
+  overflow: hidden;  
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  ::-webkit-bottom-overflow {
+    display: none;
+  }
 }
 
 .post a {
