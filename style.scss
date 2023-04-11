@@ -558,7 +558,22 @@ header {
   }
 }
 
+/* ✓ @media Standalone mode */
+@media (display-mode: standalone) {
+    /* rules... */
+}
 
+/* ✓ @media Standalone IOS/IPadOS */
+@supports (-webkit-touch-callout: none) {
+
+    @media (display-mode: standalone) {
+        /* this will  apply on IOS/IPadOS on installed PWA */
+    }
+}
+
+link[rel="manifest"] {
+        --pwacompat-splash-font: 24px Verdana;
+}
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

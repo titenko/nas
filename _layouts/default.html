@@ -29,7 +29,9 @@
     />
     <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script async src="https://unpkg.com/pwacompat" crossOrigin="anonymous"></script>
     <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+    <link rel="preload" href="{{ site.baseurl }}/manifest.json" />
     <link rel="apple-touch-icon" href="{{ site.baseurl }}/images/icons/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/images/icons/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}/images/icons/apple-touch-icon-72x72.png" />
@@ -69,6 +71,17 @@
         <a href="{{ site.baseurl }}/help-desk">Help Desk</a>
       </nav>
     </header>
+    <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker
+                        .register("/serviceWorker.js")
+                        .then((registration) => {
+                            console.log("SW registration successful");
+                        });
+                });
+            }
+        </script>
     <div id="main" role="main" class="results-container">
       <ul id="results-container"></ul>
     </div>
@@ -168,10 +181,6 @@ Innymi słowy, chcemy zaopiekować się Tobą i Twoimi bliskimi od A do Z, spraw
     ></script>
     <script
       src="{{ site.baseurl }}/assets/js/header.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="{{ site.baseurl }}/pwabuilder-sw.js"
       type="text/javascript"
     ></script>
     {% include analytics.html %}
