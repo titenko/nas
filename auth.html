@@ -12,22 +12,27 @@ title: Auth
   <input type="password" id="password">
   <button type="submit">Submit</button>
 </form>
+
 <script>
   var form = document.querySelector('form');
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var password = document.querySelector('#password').value;
+    var authLevel = null;
+
     if (password === 'admin') {
-      sessionStorage.setItem('auth', 'admin');
-      window.location.href = '{{ site.baseurl }}/admin-dashboard';
+      authLevel = 'admin';
     } else if (password === 'drivers') {
-      sessionStorage.setItem('auth', 'drivers');
-      window.location.href = '{{ site.baseurl }}/drivers-dashboard';
+      authLevel = 'drivers';
     } else if (password === 'staff') {
-      sessionStorage.setItem('auth', 'staff');
-      window.location.href = '{{ site.baseurl }}/staff-dashboard';
+      authLevel = 'staff';
     } else {
       alert('Incorrect password');
+    }
+
+    if (authLevel) {
+      sessionStorage.setItem('auth', authLevel);
+      window.location.href = '{{ site.baseurl }}/' + authLevel + '-dashboard';
     }
   });
 </script>
