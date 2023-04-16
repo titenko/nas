@@ -82,6 +82,64 @@ title: Authentication
     }
   });
 
+ // Обработчик отправки формы
+  var passwordForm = document.querySelector('#password-form');
+  passwordForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    var passwordInput = document.querySelector('#password-input');
+    var password = passwordInput.value;
+    var auth = sessionStorage.getItem('auth');
+    switch (auth) {
+      case 'staff':
+        if (password === staffPassword) {
+          window.location.href = '{{ site.baseurl }}/staff-dashboard';
+        } else {
+          alert('Incorrect password');
+        }
+        break;
+      case 'driver':
+        if (password === driverPassword) {
+          window.location.href = '{{ site.baseurl }}/drivers-dashboard';
+        } else {
+          alert('Incorrect password');
+        }
+        break;
+      case 'admin':
+        if (password === adminPassword) {
+          window.location.href = '{{ site.baseurl }}/admin-dashboard';
+        } else {
+          alert('Incorrect password');
+        }
+        break;
+      default:
+        break;
+    }
+    passwordInput.value = '';
+    closeModal();
+  });
+
+  // Показать модальное окно с соответствующей категорией
+  function showModal(category) {
+    var modal = document.querySelector('#modal');
+    var modalContent = document.querySelector('.modal-content');
+    var modalLabel = modalContent.querySelector('label');
+    switch (category) {
+      case 'staff':
+        modalLabel.textContent = 'Enter staff password:';
+        break;
+      case 'driver':
+        modalLabel.textContent = 'Enter driver password:';
+        break;
+      case 'admin':
+        modalLabel.textContent = 'Enter admin password:';
+        break;
+      default:
+        break;
+    }
+    modal.style.display = 'block';
+  }
+
+
   // Закрытие модального окна при нажатии на кнопку закрытия
   closeBtn.onclick = function() {
     modal.style.display = 'none';
