@@ -7,60 +7,42 @@ title: Auth
   <a href="{{ site.baseurl }}/beta" class="read-back">Back to home</a>
 </div>
 
-<div>
-      <button id="staff">Staff</button>
-      <button id="driver">Driver</button>
-      <button id="admin">Admin</button>
-    </div>
-    <form id="login-form">
-      <label for="password">Password:</label>
-      <input type="password" id="password">
-      <button type="submit">Submit</button>
-    </form>
+    <button id="staff-btn">Staff</button>
+<br>
+    <button id="driver-btn">Driver</button>
+<br>
+    <button id="admin-btn">Admin</button>
+    
     <script>
-      var form = document.querySelector('#login-form');
-      var passwordField = document.querySelector('#password');
-      var staffBtn = document.querySelector('#staff');
-      var driverBtn = document.querySelector('#driver');
-      var adminBtn = document.querySelector('#admin');
-      
-      staffBtn.addEventListener('click', function() {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var password = passwordField.value;
-          if (password === 'staff_password') {
-            sessionStorage.setItem('auth', 'staff');
+      function showPasswordPrompt(role) {
+        var password = prompt("Please enter your " + role + " password:");
+        if (password === "password") {
+          sessionStorage.setItem('auth', 'true');
+          if (role === "staff") {
             window.location.href = 'staff-dashboard.html';
-          } else {
-            alert('Incorrect password');
-          }
-        });
-      });
-      
-      driverBtn.addEventListener('click', function() {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var password = passwordField.value;
-          if (password === 'driver_password') {
-            sessionStorage.setItem('auth', 'driver');
+          } else if (role === "driver") {
             window.location.href = 'driver-dashboard.html';
-          } else {
-            alert('Incorrect password');
+          } else if (role === "admin") {
+            window.location.href = 'admin-dashboard.html';
           }
-        });
+        } else {
+          alert("Incorrect password");
+        }
+      }
+      
+      var staffBtn = document.getElementById("staff-btn");
+      staffBtn.addEventListener("click", function() {
+        showPasswordPrompt("staff");
       });
       
-      adminBtn.addEventListener('click', function() {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var password = passwordField.value;
-          if (password === 'admin_password') {
-            sessionStorage.setItem('auth', 'admin');
-            window.location.href = 'admin-dashboard.html';
-          } else {
-            alert('Incorrect password');
-          }
-        });
+      var driverBtn = document.getElementById("driver-btn");
+      driverBtn.addEventListener("click", function() {
+        showPasswordPrompt("driver");
+      });
+      
+      var adminBtn = document.getElementById("admin-btn");
+      adminBtn.addEventListener("click", function() {
+        showPasswordPrompt("admin");
       });
     </script>
 
@@ -101,7 +83,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-button[id="staff"] {
+button[id="staff-btn"] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -114,7 +96,7 @@ button[id="staff"] {
   cursor: pointer;
 }
 
-button[id="driver"] {
+button[id="driver-btn"] {
   display: block;
   width: 100%;
   padding: 10px;
@@ -127,7 +109,7 @@ button[id="driver"] {
   cursor: pointer;
 }
 
-button[id="admin"] {
+button[id="admin-btn"] {
   display: block;
   width: 100%;
   padding: 10px;
