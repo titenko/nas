@@ -15,12 +15,14 @@ title: Authentication
 <br>
     <button id="admin-btn">Admin</button>
     
-    <div id="password-modal" class="modal">
+    <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Enter password:</h2>
-    <input type="password" id="password-input">
-    <button id="submit-btn">Submit</button>
+    <form id="password-form">
+      <label for="password-input">Enter password:</label>
+      <input type="password" id="password-input" name="password">
+      <button type="submit" id="submit-btn">Submit</button>
+    </form>
   </div>
 </div>
 
