@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^\.well-known/assetlinks\.json$ /assetlinks.json [L]
+RewriteRule ^{{ site.baseurl }}\.well-known/assetlinks\.json$ /assetlinks.json [L]
