@@ -1,0 +1,68 @@
+---
+layout: default-staff
+title: Drivers
+---
+
+<div style="padding-top: 44pt" class="header-article">  
+<h1>{{ page.title }}</h1>
+  <a href="{{ site.baseurl }}/test" class="read-back">Back to home</a>
+</div>
+
+<script>
+  // Проверяем, авторизован ли пользователь
+  if (!sessionStorage.getItem('auth')) {
+    // Если нет, перенаправляем их на страницу авторизации
+    window.location.href = '{{ site.baseurl }}/auth';
+  }
+  // Проверяем, имеет ли пользователь права администратора
+  else if (sessionStorage.getItem('role') === 'admin') {
+    // Если да, позволяем им получить доступ к странице администратора
+    console.log('Добро пожаловать на страницу администратора!');
+  }
+  // Проверяем, имеет ли пользователь права водителя
+  else if (sessionStorage.getItem('role') === 'driver') {
+    // Если да, позволяем им получить доступ к странице водителя
+    console.log('Добро пожаловать на страницу водителя!');
+  }
+  // Проверяем, имеет ли пользователь права персонала
+  else if (sessionStorage.getItem('role') === 'staff') {
+    // Если да, позволяем им получить доступ к странице персонала
+    console.log('Добро пожаловать на страницу персонала!');
+  }
+</script>
+
+<div style="text-align: center">
+<a href="{{ site.baseurl }}/drivers-test" class="main-buttons">Delivery of consumables</a>
+<br>
+<a href="{{ site.baseurl }}/schedule-drivers" class="main-buttons">Schedule drivers</a>
+</div>
+
+<style>
+.wrapper-footer {
+    position: fixed;
+}
+
+.main-buttons {
+    text-transform: none;
+    font-size: 16pt;
+    display: inline-block;
+    padding: 15px 15px;
+    background: #347d39;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    width: 300px;
+    margin: 30px auto;
+}
+
+.read-back {
+    text-transform: none;
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 15px;
+    background: #347d39;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+</style>
