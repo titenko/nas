@@ -1,7 +1,13 @@
 ---
-layout: post
+layout: post-light
 title: Admin
 ---
+<script>
+  if (sessionStorage.getItem('auth') !== 'true') {
+    window.location.href = '{{ site.baseurl }}/login';
+  }
+</script>
+
 <p> Admin Page </p>
 
 <h1 style="text-align: center;">Appartments</h1>
