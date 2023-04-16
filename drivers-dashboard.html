@@ -23,7 +23,7 @@ title: Drivers Dashboard
 
   // Проверяем, имеет ли пользователь доступ к текущей странице
   if (!auth || allowedRoles.indexOf(auth) === -1) {
-    window.location.href = '{{ site.baseurl }}/login';
+    window.location.href = '{{ site.baseurl }}/auth';
   }
 
   var form = document.querySelector('form');
