@@ -11,6 +11,7 @@ title: Auth
   <label for="password">Password:</label>
   <input type="password" id="password">
   <button type="submit">Submit</button>
+  <a href="{{ site.baseurl }}/new-password" class="new-password">Create a password</a>  
 </form>
 
 <script>
@@ -80,6 +81,18 @@ button[type="submit"]:hover {
     display: inline-block;
     padding: 10px 15px;
     background: #347d39;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.new-password {
+    text-transform: none;
+    font-size: 15px;
+    display: inline-block;
+    padding: 10px 15px;
+    background: #347d39;
+    width: 100%;
     color: #fff;
     border-radius: 6px;
     text-decoration: none;
