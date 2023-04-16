@@ -14,9 +14,51 @@ layout: default-light
         var password = document.querySelector('#password').value;
         if (password === 'admin') {
           sessionStorage.setItem('auth', 'true');
-          window.location.href = '/del';
+          window.location.href = '{{ site.baseurl }}/del';
         } else {
           alert('Incorrect password');
         }
       });
     </script>
+
+<style>
+form {
+  max-width: 500px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="password"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0062cc;
+}
+</style>
