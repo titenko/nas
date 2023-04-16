@@ -4,25 +4,37 @@ title: Del
 ---
 <p>Order Form for Necessary Consumables</p>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTNjsb2GrPnRBSBgxrnmi1LUwNmBPFLu2GA8MXAPffpJ_jxg/viewform?embedded=true" 
-          frameborder="0" 
-          style="width:100%; height:100vh;">
-</iframe>
-    <script type="text/javascript">
-      var myFrame = document.getElementById("myFrame");
-      myFrame.onload = function() {
-        var styles = "\
-          html, body {\
-            margin: 0;\
-            padding: 0;\
-            height: 100%;\
-            overflow: hidden;\
-          }\
-          ";
-        var iframeDoc = myFrame.contentWindow.document;
-        var styleEl = iframeDoc.createElement("style");
-        styleEl.type = "text/css";
-        styleEl.appendChild(iframeDoc.createTextNode(styles));
-        iframeDoc.head.appendChild(styleEl);
-      };
-    </script>
+ <style>
+    iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
+
+<div style="position:relative;padding-bottom:56.25%;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTNjsb2GrPnRBSBgxrnmi1LUwNmBPFLu2GA8MXAPffpJ_jxg/viewform?embedded=true"
+            frameborder="0"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+    </iframe>
+  </div>
+
+  <script>
+    // Получаем iframe и его контентный документ
+    var iframe = document.getElementsByTagName('iframe')[0];
+    var iframeDoc = iframe.contentWindow.document;
+
+    // Устанавливаем высоту iframe равной высоте контентного документа
+    var resizeIFrame = function() {
+      iframe.style.height = iframeDoc.body.scrollHeight + 'px';
+    };
+
+    // Проверяем высоту контентного документа при загрузке и изменении размера окна
+    iframeDoc.body.onload = resizeIFrame;
+    window.onresize = resizeIFrame;
+  </script>
