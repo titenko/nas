@@ -14,37 +14,47 @@ title: Auth
     <button id="admin-btn">Admin</button>
     
     <script>
-      function showPasswordPrompt(role) {
-        var password = prompt("Please enter your " + role + " password:");
-        if (password === "password") {
-          sessionStorage.setItem('auth', 'true');
-          if (role === "staff") {
-            window.location.href = 'staff-dashboard.html';
-          } else if (role === "driver") {
-            window.location.href = 'driver-dashboard.html';
-          } else if (role === "admin") {
-            window.location.href = 'admin-dashboard.html';
-          }
-        } else {
-          alert("Incorrect password");
-        }
-      }
-      
-      var staffBtn = document.getElementById("staff-btn");
-      staffBtn.addEventListener("click", function() {
-        showPasswordPrompt("staff");
-      });
-      
-      var driverBtn = document.getElementById("driver-btn");
-      driverBtn.addEventListener("click", function() {
-        showPasswordPrompt("driver");
-      });
-      
-      var adminBtn = document.getElementById("admin-btn");
-      adminBtn.addEventListener("click", function() {
-        showPasswordPrompt("admin");
-      });
-    </script>
+  // Пароли для каждой категории
+  var staffPassword = 'staff123';
+  var driverPassword = 'driver456';
+  var adminPassword = 'admin789';
+
+  // Обработчик нажатия на кнопку Staff
+  var staffBtn = document.querySelector('#staff-btn');
+  staffBtn.addEventListener('click', function() {
+    var password = prompt('Enter staff password:');
+    if (password === staffPassword) {
+      sessionStorage.setItem('auth', 'staff');
+      window.location.href = '{{ site.baseurl }}/staff-dashboard';
+    } else {
+      alert('Incorrect password');
+    }
+  });
+
+  // Обработчик нажатия на кнопку Driver
+  var driverBtn = document.querySelector('#driver-btn');
+  driverBtn.addEventListener('click', function() {
+    var password = prompt('Enter driver password:');
+    if (password === driverPassword) {
+      sessionStorage.setItem('auth', 'driver');
+      window.location.href = '{{ site.baseurl }}/driver-dashboard';
+    } else {
+      alert('Incorrect password');
+    }
+  });
+
+  // Обработчик нажатия на кнопку Admin
+  var adminBtn = document.querySelector('#admin-btn');
+  adminBtn.addEventListener('click', function() {
+    var password = prompt('Enter admin password:');
+    if (password === adminPassword) {
+      sessionStorage.setItem('auth', 'admin');
+      window.location.href = '{{ site.baseurl }}/admin-dashboard';
+    } else {
+      alert('Incorrect password');
+    }
+  });
+</script>
 
 <style>
 form {
