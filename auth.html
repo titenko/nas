@@ -7,32 +7,62 @@ title: Auth
   <a href="{{ site.baseurl }}/beta" class="read-back">Back to home</a>
 </div>
 
-<form>
-  <label for="password">Password:</label>
-  <input type="password" id="password">
-  <button type="submit">Submit</button>
-    
-</form>
-
-<script>
-  var form = document.querySelector('form');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var password = document.querySelector('#password').value;
-    if (password === 'admin') {
-      sessionStorage.setItem('auth', 'admin');
-      window.location.href = '{{ site.baseurl }}/admin-dashboard';
-    } else if (password === 'drivers') {
-      sessionStorage.setItem('auth', 'drivers');
-      window.location.href = '{{ site.baseurl }}/drivers-dashboard';
-    } else if (password === 'staff') {
-      sessionStorage.setItem('auth', 'staff');
-      window.location.href = '{{ site.baseurl }}/staff-dashboard';
-    } else {
-      alert('Incorrect password');
-    }
-  });
-</script>
+<div>
+      <button id="staff">Staff</button>
+      <button id="driver">Driver</button>
+      <button id="admin">Admin</button>
+    </div>
+    <form id="login-form">
+      <label for="password">Password:</label>
+      <input type="password" id="password">
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      var form = document.querySelector('#login-form');
+      var passwordField = document.querySelector('#password');
+      var staffBtn = document.querySelector('#staff');
+      var driverBtn = document.querySelector('#driver');
+      var adminBtn = document.querySelector('#admin');
+      
+      staffBtn.addEventListener('click', function() {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var password = passwordField.value;
+          if (password === 'staff_password') {
+            sessionStorage.setItem('auth', 'staff');
+            window.location.href = 'staff-dashboard.html';
+          } else {
+            alert('Incorrect password');
+          }
+        });
+      });
+      
+      driverBtn.addEventListener('click', function() {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var password = passwordField.value;
+          if (password === 'driver_password') {
+            sessionStorage.setItem('auth', 'driver');
+            window.location.href = 'driver-dashboard.html';
+          } else {
+            alert('Incorrect password');
+          }
+        });
+      });
+      
+      adminBtn.addEventListener('click', function() {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var password = passwordField.value;
+          if (password === 'admin_password') {
+            sessionStorage.setItem('auth', 'admin');
+            window.location.href = 'admin-dashboard.html';
+          } else {
+            alert('Incorrect password');
+          }
+        });
+      });
+    </script>
 
 <style>
 form {
