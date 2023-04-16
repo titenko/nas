@@ -5,7 +5,7 @@ title: Staff Dashboard
 
 <div style="padding-top: 44pt" class="header-article">  
 <h1>{{ page.title }}</h1>
-  <a href="{{ site.baseurl }}/beta" class="read-back">Back to home</a>
+  <button id="logout">Logout</button>
 </div>
 
 <div style="text-align: center">
@@ -13,14 +13,12 @@ title: Staff Dashboard
 <br>
 <a href="{{ site.baseurl }}/schedule-staff" class="main-buttons">Schedule Staff</a>
 </div>
-
- 
   
   <script>
     var logoutButton = document.getElementById('logout');
     logoutButton.addEventListener('click', function() {
       sessionStorage.removeItem('auth');
-      window.location.href = '{{ site.baseurl }}/auth';
+      window.location.href = '{{ site.baseurl }}/login';
     });
   </script>
 
