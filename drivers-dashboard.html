@@ -9,45 +9,22 @@ title: Drivers Dashboard
 </div>
 
 <script>
-  var auth = sessionStorage.getItem('auth');
-  var allowedRoles = [];
-
-  // Выбираем, какие роли имеют доступ к текущей странице
-  if (window.location.href.indexOf('admin-dashboard') !== -1) {
-    allowedRoles = ['admin'];
-  } else if (window.location.href.indexOf('drivers-dashboard') !== -1) {
-    allowedRoles = ['admin', 'driver'];
-  } else if (window.location.href.indexOf('staff-dashboard') !== -1) {
-    allowedRoles = ['admin', 'staff'];
-  }
-
-  // Проверяем, имеет ли пользователь доступ к текущей странице
-  if (!auth || allowedRoles.indexOf(auth) === -1) {
-    window.location.href = '{{ site.baseurl }}/auth';
-  }
-
+  var authKey = 'auth_driver'; // Используем ключ сессии для водителя
   var form = document.querySelector('form');
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var password = document.querySelector('#password').value;
-    var role = '';
-
-    // Определяем, какая роль соответствует введенному паролю
-    if (password === 'admin') {
-      role = 'admin';
-    } else if (password === 'drivers') {
-      role = 'driver';
-    } else if (password === 'staff') {
-      role = 'staff';
-    }
-
-    if (allowedRoles.indexOf(role) !== -1) {
-      sessionStorage.setItem('auth', role);
-      window.location.href = '{{ site.baseurl }}/' + role + '-dashboard';
+    if (password === 'drivers') {
+      sessionStorage.setItem(authKey, 'true');
+      window.location.href = '{{ site.baseurl }}/drivers-dashboard';
     } else {
       alert('Incorrect password');
     }
   });
+  // Проверяем авторизацию при загрузке страницы
+  if (!sessionStorage.getItem(authKey)) {
+    window.location.href = '{{ site.baseurl }}/auth';
+  }
 </script>
 
 <div style="text-align: center">

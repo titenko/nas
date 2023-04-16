@@ -18,21 +18,17 @@ title: Auth
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var password = document.querySelector('#password').value;
-    var authLevel = null;
-
     if (password === 'admin') {
-      authLevel = 'admin';
+      sessionStorage.setItem('auth', 'admin');
+      window.location.href = '{{ site.baseurl }}/admin-dashboard';
     } else if (password === 'drivers') {
-      authLevel = 'drivers';
+      sessionStorage.setItem('auth', 'drivers');
+      window.location.href = '{{ site.baseurl }}/drivers-dashboard';
     } else if (password === 'staff') {
-      authLevel = 'staff';
+      sessionStorage.setItem('auth', 'staff');
+      window.location.href = '{{ site.baseurl }}/staff-dashboard';
     } else {
       alert('Incorrect password');
-    }
-
-    if (authLevel) {
-      sessionStorage.setItem('auth', authLevel);
-      window.location.href = '{{ site.baseurl }}/' + authLevel + '-dashboard';
     }
   });
 </script>
