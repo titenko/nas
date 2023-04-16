@@ -37,7 +37,7 @@ title: Auth
     var password = prompt('Enter driver password:');
     if (password === driverPassword) {
       sessionStorage.setItem('auth', 'driver');
-      window.location.href = '{{ site.baseurl }}/driver-dashboard';
+      window.location.href = '{{ site.baseurl }}/drivers-dashboard';
     } else {
       alert('Incorrect password');
     }
@@ -76,7 +76,7 @@ textarea {
   margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 16pt;
   font-family: sans-serif;
 }
 
@@ -88,7 +88,7 @@ button[type="submit"] {
   border: none;
   background-color: #347d39;
   color: #fff;
-  font-size: 16px;
+  font-size: 16pt;
   font-family: sans-serif;
   cursor: pointer;
 }
@@ -96,12 +96,12 @@ button[type="submit"] {
 button[id="staff-btn"] {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   border: none;
   background-color: #347d39;
   color: #fff;
-  font-size: 16px;
+  font-size: 16pt;
   font-family: sans-serif;
   cursor: pointer;
 }
@@ -109,12 +109,12 @@ button[id="staff-btn"] {
 button[id="driver-btn"] {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   border: none;
   background-color: #347d39;
   color: #fff;
-  font-size: 16px;
+  font-size: 16pt;
   font-family: sans-serif;
   cursor: pointer;
 }
@@ -122,12 +122,12 @@ button[id="driver-btn"] {
 button[id="admin-btn"] {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   border: none;
   background-color: #347d39;
   color: #fff;
-  font-size: 16px;
+  font-size: 16pt;
   font-family: sans-serif;
   cursor: pointer;
 }
