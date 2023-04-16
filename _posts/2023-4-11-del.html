@@ -1,26 +1,24 @@
 ---
-layout: post
+layout: post-light
 title: Del
 ---
 <p>Order Form for Necessary Consumables</p>
 
-<div id="google-form"></div>
+<iframe class="iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfTNjsb2GrPnRBSBgxrnmi1LUwNmBPFLu2GA8MXAPffpJ_jxg/viewform?embedded=true"></iframe>
 
-<script src="https://apis.google.com/js/api.js"></script>
-<script>
-  function init() {
-    var formContainer = document.getElementById('google-form');
-    gapi.client.load('forms', 'v1', function() {
-      gapi.client.forms.forms.get({
-        'formUrl': 'https://docs.google.com/forms/d/e/1FAIpQLSfTNjsb2GrPnRBSBgxrnmi1LUwNmBPFLu2GA8MXAPffpJ_jxg/viewform'
-      }).then(function(response) {
-        var formHtml = response.result.formHtml;
-        formContainer.innerHTML = formHtml;
-      }, function(reason) {
-        console.log('Error: ' + reason.result.error.message);
-      });
-    });
-  }
-  gapi.load('client', init);
-</script>
-
+<style>
+.iframe
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;  
+  width: 100%;
+  min-height: 100%;
+  padding-top: 4em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+</style>
