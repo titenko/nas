@@ -1,0 +1,22 @@
+---
+layout: default-light
+---
+
+<form>
+      <label for="password">Password:</label>
+      <input type="password" id="password">
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      var form = document.querySelector('form');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var password = document.querySelector('#password').value;
+        if (password === 'admin') {
+          sessionStorage.setItem('auth', 'true');
+          window.location.href = '/';
+        } else {
+          alert('Incorrect password');
+        }
+      });
+    </script>
