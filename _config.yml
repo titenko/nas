@@ -14,8 +14,7 @@ excerpt_separator: "\n\n"
 #
 # Flags below are optional
 #
-extra:
-  assetlinks: "/.well-known/assetlinks.json"
+
 # Includes an icon in the footer for each username you enter
 social:
   dribbble:

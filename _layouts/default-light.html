@@ -85,54 +85,12 @@
     <div id="main" role="main" class="results-container">
       <ul id="results-container"></ul>
     </div>
-    <div id="main" role="main" class="blog-container">{{ content }}</div>
-    <div class="wrapper-footer">
-      <div class="footer-container">
+    <div id="main" role="main" class="blog-container">{{ content }}</div> 
+<div style="bottom: 0; position: absolute; width: 100%;" class="wrapper-footer">
+      <div class="container">
         <footer id="myFooter">
-          <div class="footer-container">
-            <div class="row">
-              <div class="col-sm-3">
-                <h5>Menu:</h5>
-                <ul>
-                  <li><a href="{{ site.baseurl }}/">Main</a></li>
-                  <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
-                  <li><a href="{{ site.baseurl }}/notes">Notes</a></li>
-                  <li><a href="{{ site.baseurl }}/news">News</a></li>
-                  <li><a href="{{ site.baseurl }}/articles">Articles</a></li>
-                </ul>
-              </div>
-              <div class="col-sm-3">
-                <h5>Contact:</h5>
-                <ul>
-                  <li><a href="{{ site.baseurl }}/about">About</a></li>
-                  <li>
-                    <a href="https://titenko.github.io/contact/">Contact Form</a>
-                  </li>
-                  <li><a href="#">Contacts</a></li>
-                  <li><a href="{{ site.baseurl }}/donate">Donate</a></li>
-                </ul>
-              </div>
-              <div class="col-sm-3">
-                <h5>Support:</h5>
-                <ul>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Help desk</a></li>
-                  <li><a href="#">Forums</a></li>
-                </ul>
-              </div>
-              <div class="col-sm-3 info">
-                <h5>Information:</h5>
-                <p>
-                  Native Apartments to symbol najwyższych standardów w zakresie wynajmu krótkoterminowego apartamentów w Krakowie. Połączenie doświadczenia w branży najmu nieruchomości z kreatywnością naszej załogi dało efekt w postaci kompleksowej oferty, obejmującej: zakwaterowanie w świetnej lokalizacji w centrum miasta, transfer na linii lotnisko – apartament, wynajem samochodu dostosowanego do potrzeb, pakiety wycieczek obejmujące największe atrakcje turystyczne miasta i regionu oraz organizację eventów i wydarzeń, takich jak wieczory panieńskie/kawalerskie, rocznice, imprezy firmowe czy urodziny.
-
-Innymi słowy, chcemy zaopiekować się Tobą i Twoimi bliskimi od A do Z, sprawiając że pobyt w stolicy Małopolski będzie fascynującym przeżyciem! Wszystko to w niewygórowanej, rynkowej cenie oraz najwyższym standardzie obsługi.
-                </p>
-                <div class="second-bar">
-                <a href="{{ site.baseurl }}">
-                  {{ site.name }}
-                </a>
-                <br>
-                <div class="social-icons">
+<div class="second-bar">
+          <div class="social-icons">
                   <a
                     href="https://github.com/{{ site.social.github }}"
                     class="github"
@@ -154,36 +112,11 @@ Innymi słowy, chcemy zaopiekować się Tobą i Twoimi bliskimi od A do Z, spraw
                     ><i class="fab fa-facebook"></i
                   ></a>
                 </div>
-</div>
-              </div>
-            </div>
-          </div>
-
-
-          
-            <p style="text-align: center">Powered by Jekyll. <br> &copy; Maksym Titenko</p>
-          
+          <p style="text-align:center;">Copyright © Maksym Titenko</p> 
         </footer>
       </div>
     </div>
 
-    <script
-      src="{{ site.baseurl }}/assets/js/js.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="{{ site.baseurl }}/assets/js/SimpleJekyllSearch.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="{{ site.baseurl }}/assets/js/search-script.js"
-      type="text/javascript"
-    ></script>
-    <script
-      src="{{ site.baseurl }}/assets/js/header.js"
-      type="text/javascript"
-    ></script>
     {% include analytics.html %}
   </body>
 </html>
-
