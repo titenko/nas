@@ -1,12 +1,12 @@
 {
-  "name": "Native Apartments Staff",
-  "short_name": "Native Apartments Staff",
+  "name": "N.A.S. Beta",
+  "short_name": "N.A.S. Beta",
   "theme_color": "#22272e",
   "background_color": "#22272e",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "https://titenko.github.io/nas/",
-  "start_url": "https://titenko.github.io/nas/test",
+  "start_url": "https://titenko.github.io/nas/beta",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
