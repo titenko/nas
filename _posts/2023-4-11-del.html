@@ -4,7 +4,7 @@ title: Del
 ---
 <p>Order Form for Necessary Consumables</p>
 
- <style>
+  <style>
     iframe {
       display: block;
       width: 100%;
@@ -14,16 +14,20 @@ title: Del
       padding: 0;
       overflow: hidden;
     }
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 75%;
+    }
   </style>
-
-<div style="position:relative;padding-bottom:56.25%;">
+<div class="iframe-wrapper">
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTNjsb2GrPnRBSBgxrnmi1LUwNmBPFLu2GA8MXAPffpJ_jxg/viewform?embedded=true"
             frameborder="0"
             allowfullscreen
             style="position:absolute;top:0;left:0;width:100%;height:100%;">
     </iframe>
   </div>
-
   <script>
     // Получаем iframe и его контентный документ
     var iframe = document.getElementsByTagName('iframe')[0];
@@ -31,7 +35,10 @@ title: Del
 
     // Устанавливаем высоту iframe равной высоте контентного документа
     var resizeIFrame = function() {
-      iframe.style.height = iframeDoc.body.scrollHeight + 'px';
+      var newHeight = iframeDoc.body.scrollHeight;
+      iframe.style.height = newHeight + 'px';
+      // Устанавливаем высоту обертки равной высоте iframe, чтобы избежать появления полосы прокрутки
+      iframe.parentNode.style.height = newHeight + 'px';
     };
 
     // Проверяем высоту контентного документа при загрузке и изменении размера окна
