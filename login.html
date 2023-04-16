@@ -14,7 +14,7 @@ layout: default-light
         var password = document.querySelector('#password').value;
         if (password === 'admin') {
           sessionStorage.setItem('auth', 'true');
-          window.location.href = '{{ site.baseurl }}/del';
+          window.location.href = '{{ site.baseurl }}/delivery';
         } else {
           alert('Incorrect password');
         }
