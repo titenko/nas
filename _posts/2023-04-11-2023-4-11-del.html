@@ -1,7 +1,14 @@
 ---
+title: Del
+date: 2023-04-11 00:00:00 Z
 layout: post-light
-title: Delivery
 ---
+
+<script>
+  if (sessionStorage.getItem('auth') !== 'true') {
+    window.location.href = '{{ site.baseurl }}/login.html';
+  }
+</script>
 
 <p>Order Form for Necessary Consumables</p>
 
