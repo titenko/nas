@@ -10,7 +10,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7.x
+        ruby-version: 2.6.x
     - name: Install Jekyll and Dependencies
       run: |
         gem install bundler jekyll
