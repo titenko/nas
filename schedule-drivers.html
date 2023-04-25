@@ -1,0 +1,75 @@
+---
+title: Schedule
+layout: default-staff
+---
+
+<div style="padding-top: 44pt" class="header-article">  
+<h1>{{ page.title }}</h1>
+  <button id="Back">Back</button>
+</div>
+
+<script>
+    var logoutButton = document.getElementById('Back');
+    logoutButton.addEventListener('click', function() {
+      sessionStorage.removeItem('auth');
+      window.location.href = '{{ site.baseurl }}/test';
+    });
+  </script>
+
+<style>
+button[id="Back"] {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #347d39;
+  color: #fff;
+  font-size: 16px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+</style>
+
+<p>Working hours for drivers</p>
+
+<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 77.2727%;"><iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT_XMOm8YfoPt0FmiN8fg4KU1jfUQ8nHsfYMF8PI9KEtQ2Q3G-MoJKp1I44-IiQuC1BsoAXqheqY4Mr/pubhtml?gid=275162235" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen></iframe></div>
+
+<style>
+      /* Стили для контейнера iframe */
+      .iframe-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 79.3%; /* соотношение сторон 4:3 */
+      }
+
+      /* Стили для iframe */
+      .iframe-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+         
+      }
+
+      /* Стили для мобильных устройств */
+      @media (max-width: 480px) {
+        .iframe-container {
+          height: auto !important;
+          padding-bottom: 350%; 
+        }
+    }
+     @media screen and (min-width: 481px) and (max-width: 768px) {
+        .iframe-container { 
+          height: auto !important;
+          padding-bottom: 350%; 
+        }
+    }    
+     @media screen and (min-width: 769px) {
+        .iframe-container {
+          height: auto !important;
+          padding-bottom: 350%; 
+      }
+} 
+    </style>
